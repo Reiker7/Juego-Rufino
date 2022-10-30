@@ -6,7 +6,7 @@ const Game = {
     keys: {
         TOP_KEY: 87,
         BOT_KEY: 83,
-        D_KEY: 68,
+        D_KEY : 68,
         A_KEY: 65,
     },
     
@@ -46,20 +46,20 @@ const Game = {
 
 
             if(this.isImpacto1()) {
+                console.log("15")
+                this.caballoPlayer.acelera(15);
+            }
+            if(this.isImpacto2()) {
+                console.log("8")
+                this.caballoPlayer.acelera(8);
+            }
+            if(this.isImpacto3()) {
                 console.log("5")
                 this.caballoPlayer.acelera(5);
             }
-            if(this.isImpacto2()) {
-                console.log("2")
-                this.caballoPlayer.acelera(2);
-            }
-            if(this.isImpacto3()) {
-                console.log("1")
-                this.caballoPlayer.acelera(1);
-            }
             if(this.isImpacto4()) {
-                console.log("4")
-                this.caballoPlayer.desacelera(1);
+                console.log("-5")
+                this.caballoPlayer.desacelera(-5);
             }
             
             if(this.isCollision()) {

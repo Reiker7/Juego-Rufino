@@ -28,6 +28,7 @@ class Player {
     }
     setListeners() {
         document.onkeydown = function(event) {
+            
             if (event.keyCode === this.keys.TOP_KEY ){
                 this.dy =-5
     
@@ -39,13 +40,10 @@ class Player {
             
             };
             if (event.keyCode === this.keys.D_KEY ){
-               
-                  this.shoot();
-               
-                  
-    
-                
+        
+           
             
+    
             };
             if (event.keyCode === this.keys.A_KEY ){
                 
@@ -53,6 +51,10 @@ class Player {
 
             
             };
+            document.onkeypress = function(event) {
+                
+
+            }
         }.bind(this)
 
         document.onkeyup = function(event) {
@@ -62,6 +64,10 @@ class Player {
             };
             if (event.keyCode === this.keys.BOT_KEY ){
                 this.dy = 0
+  
+            }
+            if (event.keyCode === this.keys.D_KEY ){
+                this.shoot()
   
             }
                 
@@ -125,7 +131,12 @@ class Player {
             this.h,
             this.ctx,
             )
-            this.bullets.push(bullet)
+
+                this.bullets.push(bullet)
+            
+
+          
+            
         
     }
     explo(){
