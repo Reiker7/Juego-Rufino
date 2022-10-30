@@ -1,5 +1,4 @@
 
-// 4. no disparan juntas para no pasarse el juego de una rafaga
 const Game = {
     canvas: undefined,
     ctx: undefined,
@@ -44,7 +43,7 @@ const Game = {
 
             this.clearObstacles()
             this.clearBullets()
-            // this.clearBullets2()
+
 
             if(this.isImpacto1()) {
                 console.log("5")
@@ -169,20 +168,13 @@ const Game = {
     },
 
     clearBullets: function() {
-        ((obstacle) => obstacle.y >= 0)
-        this.player.bullets = this.player.bullets.filter((bullet) => bullet.x + bullet.r <= this.canvas.width )
-    
-    //    Data1---- console.log(this.player.bullets)
+  
+    ((obstacle) => obstacle.y >= 0)
+    this.player.bullets = this.player.bullets.filter((bullet) => bullet.x + bullet.r <= this.canvas.width )
+
     },
 
-    // clearBullets2: function() {
-    //     ((obstacle) => obstacle.y >= 0)
-    //     this.player.bullets = this.player.bullets.filter((bullet) => bullet.x + bullet.r <= this.dianaM.x && bullet.x - bullet.r <= this.dianaM.x + this.dianaM.w )
-    //     && bullet.y + bullet.r >= this.dianaM.y &&
-    //     bullet.y - bullet.r <= this.dianaM.y + this.dianaM.h
-        
-    
-    // },
+
     
 
     // Daño a helicoptero
@@ -257,12 +249,19 @@ const Game = {
 
     // Caballos llegan al final
     isCollision2: function() {
-        if (this.dianaM.y    <= (y = 0)){
+        if (this.dianaM.y   === (y = 250)){
             // >= this.canvas.height / 2) 
          
-            console.log("1")
-            this.dianaM.y = 300 
+            
+            this.dianaM.moveT()
         }
+        if (this.dianaM.y    === (y = 0)){
+            // >= this.canvas.height / 2) 
+         
+            
+            this.dianaM.moveD()
+        }
+ 
         
          if (this.player.y  <= (y = 0)) {
             this.gameOver2()

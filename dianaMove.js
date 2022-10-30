@@ -68,14 +68,26 @@ class DianaM {
         })
 
     }
+    moveT() {
 
-    
-    move() {
-
-        this.y -=0.5;
+        this.dy =- 0.5
 
 
     }
+    moveD() {
+
+        this.dy =+ 0.5
+
+
+    }
+    
+    move() {
+
+        this.y += this.dy;
+
+
+    }
+  
 
 
     animateImg(frameCounter) {
